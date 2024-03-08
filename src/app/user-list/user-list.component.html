@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="card mt-3">
+    <div class="heading">
+      <h1>List of User</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-primary m-1"
+              (click)="editUser(user)"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger m-1"
+              (click)="deleteUser(user)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

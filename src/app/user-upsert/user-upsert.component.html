@@ -1,0 +1,122 @@
+<div class="container mt-3">
+  <div class="card">
+    <div class="heading">
+      <h1>User Management System</h1>
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="userDataExists" class="alert alert-danger mt-3">
+        User data already exists!
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First name"
+            aria-label="First name"
+            formControlName="firstName"
+          />
+          <div
+            *ngIf="
+              userForm.get('firstName')?.invalid &&
+              userForm.get('firstName')?.touched
+            "
+            class="text-danger"
+          >
+            * First Name is required
+          </div>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last name"
+            aria-label="Last name"
+            formControlName="lastName"
+          />
+          <div
+            *ngIf="
+              userForm.get('lastName')?.invalid &&
+              userForm.get('lastName')?.touched
+            "
+            class="text-danger"
+          >
+            * Last Name is required
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email"
+            aria-label="Email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              userForm.get('email')?.invalid && userForm.get('email')?.touched
+            "
+            class="text-danger"
+          >
+            * email is required
+          </div>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Address"
+            aria-label="Address"
+            formControlName="address"
+          />
+          <div
+            *ngIf="
+              userForm.get('address')?.invalid &&
+              userForm.get('address')?.touched
+            "
+            class="text-danger"
+          >
+            * address is required
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3" style="width: 51%">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Phone"
+            aria-label="Phone"
+            formControlName="phone"
+          />
+          <div
+            *ngIf="
+              userForm.get('phone')?.invalid && userForm.get('phone')?.touched
+            "
+            class="text-danger"
+          >
+            * phone is required
+          </div>
+        </div>
+      </div>
+      <div class="container mt-3" style="padding: 10px">
+        <button
+          type="submit"
+          class="btn btn-secondary m-1"
+          [disabled]="!userForm.valid"
+        >
+          Submit
+        </button>
+        <button
+          type="submit"
+          class="btn btn-secondary m-1"
+          (click)="showAlluserList()"
+        >
+          List of User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

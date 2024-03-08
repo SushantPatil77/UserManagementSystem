@@ -1,0 +1,20 @@
+{
+  "User": [
+    {
+      "firstName": "aman",
+      "lastName": "wade",
+      "email": "amanpatil@gmail.com",
+      "address": "kolhapur",
+      "phone": "7896325693",
+      "id": 1
+    },
+    {
+      "firstName": "Sushant",
+      "lastName": "Patil",
+      "email": "sushantpatil6377@gmail.com",
+      "address": "brahamna galli chandgad",
+      "phone": "7821848893",
+      "id": 2
+    }
+  ]
+}
