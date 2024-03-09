@@ -11,8 +11,13 @@ export class UserService {
 
   constructor(private https: HttpClient) {}
 
-  addUser(userData: User): Observable<any> {
-    return this.https.post(this.Url + 'User', userData);
+  addUser(userData: User, type: any): Observable<any> {
+    //here Checking the type of operation like Add or update
+    if (type === 'Add') {
+      return this.https.post(this.Url + 'User', userData);
+    } else {
+      return this.https.put(this.Url + 'User/' + userData.id, userData);
+    }
   }
 
   getUserList(): Observable<User[]> {

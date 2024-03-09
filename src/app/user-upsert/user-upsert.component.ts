@@ -26,6 +26,7 @@ export class UserUpsertComponent {
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      id: [''],
     });
     this.route.queryParams.subscribe((params) => {
       if (params['user']) {
@@ -43,27 +44,39 @@ export class UserUpsertComponent {
 
         if (!exists) {
           if (this.userForm.valid) {
-            const userData = this.userForm.value;
-            console.log(userData);
-            this.userService.addUser(userData).subscribe((data) => {
-              alert('data is added');
-              console.log(data);
-            });
+            // here Check if the form is valid
+            // Determine operation type Add or Update based on id
+            const type = this.userForm.value.id ? 'Update' : 'Add';
 
-            this.router.navigate(['/user-list']);
-          } else {
-            console.log('Form is invalid');
+            // Call UserService to add or update user data
+            this.userService
+              .addUser(this.userForm.value, type)
+              .subscribe((data) => {
+                // Navigate to user list
+                this.router.navigate(['/user-list']);
+                // Reset the form after successful submission
+                this.userForm.reset();
+              });
           }
+
+          // if (exists) {
+          //   alert('User data already exists!');
+          // } else {
+
+          // }
         }
-
-        // if (exists) {
-        //   alert('User data already exists!');
-        // } else {
-
-        // }
       });
+
+    // if (this.userForm.value.firstName) {
+    //   var type = this.userForm.value.id == null ? 'Add' : 'Update';
+    //   this.userService.addUser(this.userForm.value, type).subscribe((data) => {
+    //     this.router.navigate(['/user-list']);
+    //   });
+    // }
   }
+
   showAlluserList() {
+    // Navigate to user list
     this.router.navigate(['/user-list']);
   }
 }

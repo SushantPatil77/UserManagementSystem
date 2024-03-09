@@ -1,20 +1,28 @@
 {
   "User": [
     {
-      "firstName": "aman",
-      "lastName": "wade",
-      "email": "amanpatil@gmail.com",
-      "address": "kolhapur",
-      "phone": "7896325693",
-      "id": 1
+      "firstName": "sushant  patil;z",
+      "lastName": "patil",
+      "email": "sushantpatilpatizl6377@gmail.com",
+      "address": "brahman chandgad",
+      "phone": "9552620609",
+      "id": 4
     },
     {
-      "firstName": "Sushant",
+      "firstName": "Rohit sgdht",
       "lastName": "Patil",
-      "email": "sushantpatil6377@gmail.com",
-      "address": "brahamna galli chandgad",
-      "phone": "7821848893",
-      "id": 2
+      "email": "Rohitpatilsffdft@gmail.com",
+      "address": "brahman dfdf",
+      "phone": "2184889377",
+      "id": 5
+    },
+    {
+      "firstName": "amol",
+      "lastName": "patil",
+      "email": "Test@test.com",
+      "address": "here",
+      "phone": "2320224468",
+      "id": 6
     }
   ]
 }
